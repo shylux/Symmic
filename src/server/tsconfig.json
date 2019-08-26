@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "types": ["node"],
+    "allowSyntheticDefaultImports": true
+  },
+  "files": [ "server.ts" ],
+  "include": [
+    "./**/*.ts"
+  ]
+}
