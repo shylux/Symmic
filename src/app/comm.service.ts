@@ -26,8 +26,7 @@ export class CommService {
     });
 
     this.socket.on('list-games', (data) => {
-      const lobbys: Lobby[] = data as Lobby[];
-      this.lobbysSubject.next(lobbys);
+      this.lobbysSubject.next(Lobby.loadAll(data));
     });
 
     this.socket.on('login', (data) => {
