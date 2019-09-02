@@ -1,0 +1,20 @@
+<div class="card border-secondary mb-3">
+  <div class="card-header">{{ game.name }}</div>
+  <div class="card-body">
+    <p class="card-text"><i octicon="repo" class="mr-2" ></i> {{ game.ruleset }}</p>
+    <p class="card-text">
+      <span *ngFor="let player of game.players"><i octicon="person" class="mr-2" ></i> {{ player.name }}</span>
+    </p>
+    <p class="card-text"><i octicon="clock" class="mr-2" ></i> {{ moment(game.created).fromNow() }}</p>
+  </div>
+  <div class="card-footer">
+    <button *ngIf="!hasStarted()" type="button" class="btn btn-primary mr-3"
+            [ngClass]="{disabled: isCurrentUserInGame() || !commService.username}">
+      {{ isCurrentUserInGame() ? 'Waiting for players...' : (commService.username) ? 'Join Game' : 'Login to join' }}
+    </button>
+
+    <button *ngIf="hasStarted()" type="button" class="btn btn-warning">
+      {{ isCurrentUserInGame() ? 'Play' : 'Spectate' }}
+    </button>
+  </div>
+</div>

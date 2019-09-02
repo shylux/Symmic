@@ -1,0 +1,9 @@
+<form *ngIf="!commService.username" [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="input-group">
+  <input type="text" formControlName="username" placeholder="Username" class="form-control"
+         [ngClass]="{'is-invalid': submitted && loginForm.controls.username.errors}" />
+  <div class="input-group-append">
+    <button class="input-group-text">{{ !submitted ? 'Login' : 'Loading..'}}</button>
+  </div>
+</form>
+
+<h3 *ngIf="commService.username">{{ commService.username }} <i octicon="person" width=".9em" class="ml-2"></i></h3>

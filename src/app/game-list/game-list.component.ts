@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {CommService} from '../comm.service';
 
 @Component({
   selector: 'app-game-list',
@@ -9,7 +10,7 @@ export class GameListComponent implements OnInit {
   @Input()
   title: string;
 
-  constructor() { }
+  constructor(private commService: CommService) { }
 
   ngOnInit() {
   }
