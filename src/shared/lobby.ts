@@ -8,7 +8,6 @@ export default class Lobby extends Serializable {
   ruleset: string;
   created: Date;
   players: Player[];
-  started: Date; // not set on lobby
 
   constructor(name: string, ruleset: string, players: Player[]) {
     super();
@@ -17,5 +16,10 @@ export default class Lobby extends Serializable {
     this.name = name;
     this.ruleset = ruleset;
     this.players = players;
+  }
+
+  loadChildren(): void {
+    this.players = Player.loadAll(this.players);
+    this.created = new Date((this.created as unknown as string));
   }
 }

@@ -9,6 +9,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { OcticonDirective } from './octicon.directive';
 import { GamePreviewComponent } from './game-preview/game-preview.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { GamePreviewComponent } from './game-preview/game-preview.component';
     GameListComponent,
     LoginComponent,
     OcticonDirective,
-    GamePreviewComponent
+    GamePreviewComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

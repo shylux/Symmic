@@ -16,6 +16,6 @@ export default abstract class Serializable {
     return result;
   }
 
+  // convert all non-json-type properties to the correct type
   loadChildren(): void {}
-
 }
